@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: local-pv
+spec:
+  capacity:
+    storage: 5Gi  # Size of the volume
+  accessModes:
+    - ReadWriteOnce  # The PV can be mounted as read-write by a single node
+  hostPath:
+    path: /mnt/  # Path on the node where the data will be stored
+  persistentVolumeReclaimPolicy: Retain  # What to do with the PV after the claim is deleted
+  storageClassName: local-storage  # Storage class associated with the PV (can be any name)
