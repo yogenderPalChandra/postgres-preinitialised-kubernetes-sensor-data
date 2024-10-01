@@ -118,5 +118,4 @@ spec:
           name: postgres
           defaultMode: 0755
       - name: data
-        persistentVolumeClaim:
-          claimName: local-pvc  # Make sure you have a PVC created
+        emptyDir: {}
